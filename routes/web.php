@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SeriesController;
+use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -54,3 +55,7 @@ Route::get('/series2', function () {
 });
 
 Route::get('/series', [SeriesController::class, 'listarSeries']);
+
+Route::get('/home', HomeController::class, 'index');
+
+Route::get('/principal', [HomeController::class, 'principal']);
